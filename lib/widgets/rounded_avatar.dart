@@ -13,7 +13,8 @@ class RoundedAvatar extends StatelessWidget {
       child: CachedNetworkImage(
         imageUrl: 'https://picsum.photos/100',
         width: avatar_size,
-        height: avatar_size,),
+        height: avatar_size,
+      ),
     );
   }
 }
