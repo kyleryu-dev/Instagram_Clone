@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:yongtaek/constants/common_size.dart';
+import 'package:yongtaek/widgets/comment.dart';
 import 'package:yongtaek/widgets/my_progress_indicator.dart';
 import 'package:yongtaek/widgets/rounded_avatar.dart';
 
@@ -25,14 +26,31 @@ class Post extends StatelessWidget {
         _postHeader(),
         _postimage(),
         _postActions(),
-        Padding(
-          padding: const EdgeInsets.only(left: common_gap),
-          child: Text(
-            '12000 likes',
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-        ),
+        _postLikes(),
+        _postCaption(),
       ],
+    );
+  }
+
+  Widget _postCaption() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+          horizontal: common_gap, vertical: common_xxs_gap),
+      child: Comment(
+        showImage: false,
+        username: 'testingUser',
+        text: 'I have money!!!',
+      ),
+    );
+  }
+
+  Padding _postLikes() {
+    return Padding(
+      padding: const EdgeInsets.only(left: common_gap),
+      child: Text(
+        '12000 likes',
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ),
     );
   }
 
@@ -102,3 +120,5 @@ class Post extends StatelessWidget {
     );
   }
 }
+
+
